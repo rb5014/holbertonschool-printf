@@ -44,3 +44,19 @@ int print_string(va_list ap)
 	}
 	return (nb_c);
 }
+
+/**
+ * print_percent - cfr description
+ * @ap: input list of args
+ * description: print the percent character
+ * Return: a number of a character printed
+ */
+
+int print_percent(va_list ap)
+{
+	int nb_c = 0;
+
+	(void) ap;
+	nb_c += _putchar('%');
+	return (nb_c);
+}

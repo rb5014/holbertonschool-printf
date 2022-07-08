@@ -10,9 +10,10 @@
 int print_char(va_list ap)
 {
 	char c = (char) va_arg(ap, int);
+	int nb_c = 0;
 
-	_putchar(c);
-	return (1);
+	nb_c += _putchar(c);
+	return (nb_c);
 }
 
 /**
@@ -24,12 +25,22 @@ int print_char(va_list ap)
 
 int print_string(va_list ap)
 {
-	int j;
+	int j, nb_c = 0;
 	char *s = va_arg(ap, char *);
 
+	if (!(s))
+	{
+		nb_c += _putchar('(');
+		nb_c += _putchar('n');
+		nb_c += _putchar('u');
+		nb_c += _putchar('l');
+		nb_c += _putchar('l');
+		nb_c += _putchar(')');
+		return (nb_c);
+	}
 	for (j = 0; s[j]; j++)
 	{
-		_putchar(s[j]);
+		nb_c += _putchar(s[j]);
 	}
-	return (j - 1);
+	return (nb_c);
 }

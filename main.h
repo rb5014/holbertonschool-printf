@@ -18,7 +18,8 @@ int print_hexa_lower(va_list ap);
 void print_last_hexa_digit(int n);
 int print_hexa_upper(va_list ap);
 void print_last_hexa(unsigned int n);
-
+int print_octal(va_list ap);
+void print_last_octal(unsigned int n);
 /**
  * struct convert - struct convert
  * @spec: the specifier

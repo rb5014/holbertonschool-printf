@@ -9,10 +9,11 @@
  */
 int main(void)
 {
-    int len;
+	int len, len2;
 	int k = 255;
-	len = _printf("%x", k);
-	printf("\nlength [%d]\n", len);
+	len = _printf("%u", k);
+	len2 = printf("%u", k);
+	printf("\nlength [%d] [%d]\n", len, len2);
 
    return (0);
 }

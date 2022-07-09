@@ -64,7 +64,7 @@ int print_unsigned_int(va_list ap)
  * Return: it's void function
  */
 
-void print_last_hexa_digit(int n)
+void print_last_hexa_digit(unsigned int n)
 {
 	int j;
 

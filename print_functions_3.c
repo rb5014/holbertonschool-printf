@@ -49,8 +49,7 @@ void print_last_octal(unsigned int n)
 {
 	if (n / 8)
 		print_last_octal(n / 8);
-
-		_putchar(n % 8 + '0');
+	_putchar(n % 8 + '0');
 }
 
 /**
@@ -65,7 +64,7 @@ int print_octal(va_list ap)
 	unsigned int j = va_arg(ap, unsigned int);
 	int nb_c = 1;
 
-	print_octal(j);
+	print_last_octal(j);
 	while (j / 8)
 	{
 		nb_c++;

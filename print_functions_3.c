@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_last_hexa_upper - cfr description
  * @n: input unsigned int

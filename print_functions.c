@@ -3,7 +3,7 @@
 /**
  * print_char - cfr description
  * @ap: input list of args
- * description: print a character
+ * Description: print a character
  * Return: a number of a character printed
  */
 
@@ -19,7 +19,7 @@ int print_char(va_list ap)
 /**
  * print_string - cfr description
  * @ap: input list of args
- * description: print a string
+ * Description: print a string
  * Return: a number of a character printed
  */
 
@@ -48,7 +48,7 @@ int print_string(va_list ap)
 /**
  * print_percent - cfr description
  * @ap: input list of args
- * description: print the percent character
+ * Description: print the percent character
  * Return: a number of a character printed
  */
 
@@ -64,7 +64,7 @@ int print_percent(va_list ap)
 /**
  * print_last_digit - cfr description
  * @n: input integer
- * description: print the last digit of a number recursively
+ * Description: print the last digit of a number recursively
  * Return: it's a void function
  */
 
@@ -78,8 +78,8 @@ void print_last_digit(unsigned int n)
 /**
  * print_int - cfr description
  * @ap: input list of args
- * description: print an integer
- * return: a number of a integer printed
+ * Description: print an integer
+ * Return: a number of a integer printed
  */
 
 int print_int(va_list ap)

@@ -14,6 +14,8 @@ void print_last_digit(unsigned int n);
 void print_last_binary(unsigned int n);
 int print_ui_to_b(va_list ap);
 int print_unsigned_int(va_list ap);
+int print_hexadecimal_lower_case(va_list ap);
+void print_last_hexa_digit(int n);
 
 /**
  * struct convert - struct convert

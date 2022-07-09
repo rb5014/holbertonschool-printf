@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	int i, j, nb_c;
 	conv k[] = {{'c', print_char}, {'s', print_string},
 		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
-		    {'b', print_ui_to_b}, {'u', print_unsigned_int}, {0, 0}};
+		    {'b', print_ui_to_b}, {'u', print_unsigned_int},
+			{'x', print_hexadecimal_lower_case}, {0, 0}};
 
 	if (format == NULL)
 		return (-1);
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 		}
 		if (!(format[i + 1]))
 			return (-1);
-		for (j = 0; j < 7; j++)   /* format[i] = '%' */
+		for (j = 0; j < 9; j++)   /* format[i] = '%' */
 		{
 			if (format[i + 1] == k[j].spec)
 			{
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (j < 7)
+		if (j < 9)
 			continue;
 		nb_c += _putchar(format[i]);
 	}

@@ -55,3 +55,46 @@ int print_unsigned_int(va_list ap)
 	}
 	return (nb_c);
 }
+
+/**
+ * print_last_hexa_digit - cfr description
+ * @n: input integer
+ * Description: Print the conversion of a int in hexadecimal in lower case
+ * recursively
+ * Return: it's void function
+ */
+
+void print_last_hexa_digit(int n)
+{
+	int j;
+
+	if (n / 16)
+		print_last_hexa_digit(n / 16);
+	j = n % 16;
+	if (j < 10)
+		_putchar(n % 16 + '0');
+	else
+		_putchar(n % 16 - 10 + 'a');
+}
+
+/**
+ * print_hexadecimal_lower_case - cfr description
+ * @ap: input va_list
+ * Description: Print the conversion of a int in hexadecimal in lower case
+ * Return: a number of a hexadecimal printed
+ */
+
+int print_hexadecimal_lower_case(va_list ap)
+{
+	int j = va_arg(ap, int);
+	int nb_c = 1;
+
+	print_last_hexa_digit(j);
+	while (j / 16)
+	{
+		nb_c++;
+		j = j / 16;
+	}
+	return (nb_c);
+}
+

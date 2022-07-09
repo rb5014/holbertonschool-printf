@@ -10,9 +10,9 @@
 int main(void)
 {
     int len;
-   unsigned int k = 9889;
-	len = _printf("%u", k);
-	printf("length [%d]\n", len);
+	int k = 255;
+	len = _printf("%x", k);
+	printf("\nlength [%d]\n", len);
 
    return (0);
 }

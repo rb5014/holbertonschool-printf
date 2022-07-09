@@ -86,7 +86,7 @@ void print_last_hexa_digit(int n)
 
 int print_hexa_lower(va_list ap)
 {
-	int j = va_arg(ap, int);
+	unsigned int j = va_arg(ap, unsigned int);
 	int nb_c = 1;
 
 	print_last_hexa_digit(j);

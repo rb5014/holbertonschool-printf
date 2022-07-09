@@ -3,7 +3,7 @@
 /**
  * print_char - cfr description
  * @ap: input list of args
- * description: print a character
+ * Description: print a character
  * Return: a number of a character printed
  */
 
@@ -19,7 +19,7 @@ int print_char(va_list ap)
 /**
  * print_string - cfr description
  * @ap: input list of args
- * description: print a string
+ * Description: print a string
  * Return: a number of a character printed
  */
 
@@ -48,7 +48,7 @@ int print_string(va_list ap)
 /**
  * print_percent - cfr description
  * @ap: input list of args
- * description: print the percent character
+ * Description: print the percent character
  * Return: a number of a character printed
  */
 
@@ -64,11 +64,11 @@ int print_percent(va_list ap)
 /**
  * print_last_digit - cfr description
  * @n: input integer
- * description: print the last digit of a number recursively
+ * Description: print the last digit of a number recursively
  * Return: it's a void function
  */
 
-void print_last_digit(int n)
+void print_last_digit(unsigned int n)
 {
 	if (n / 10)
 		print_last_digit(n / 10);
@@ -78,21 +78,28 @@ void print_last_digit(int n)
 /**
  * print_int - cfr description
  * @ap: input list of args
- * description: print an integer
- * return: a number of a integer printed
+ * Description: print an integer
+ * Return: a number of a integer printed
  */
 
 int print_int(va_list ap)
 {
-	int j, nb_c = 1;
 
-	j = va_arg(ap, int);
-	print_last_digit(j);
-	while (j / 10)
+	int j = va_arg(ap, int), nb_c = 1;
+	unsigned int n = j;
+
+	if (j < 0)
+	{
+		nb_c += _putchar('-');
+		n = -n;
+	}
+	print_last_digit(n);
+	while (n / 10)
 	{
 		nb_c++;
-		j = j / 10;
+		n = n / 10;
 	}
 	return (nb_c);
 
 }
+

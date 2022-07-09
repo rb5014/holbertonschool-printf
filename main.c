@@ -10,11 +10,9 @@
 int main(void)
 {
     int len;
-    int len2;
-	int k = 2050;
-	len = _printf("%d", k);
-	len2 = printf("\n%ddobi", k);
-	printf("length [%d, %d]\n", len, len2);
+   unsigned int k = 98;
+	len = _printf("%b", k);
+	printf("length [%d]\n", len);
 
    return (0);
 }

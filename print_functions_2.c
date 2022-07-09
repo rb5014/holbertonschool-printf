@@ -78,13 +78,13 @@ void print_last_hexa_digit(int n)
 }
 
 /**
- * print_hexadecimal_lower_case - cfr description
+ * print_hexa_lower - cfr description
  * @ap: input va_list
  * Description: Print the conversion of a int in hexadecimal in lower case
  * Return: a number of a hexadecimal printed
  */
 
-int print_hexadecimal_lower_case(va_list ap)
+int print_hexa_lower(va_list ap)
 {
 	int j = va_arg(ap, int);
 	int nb_c = 1;
@@ -97,4 +97,3 @@ int print_hexadecimal_lower_case(va_list ap)
 	}
 	return (nb_c);
 }
-

@@ -9,7 +9,8 @@ int print_char(va_list ap);
 int print_string(va_list ap);
 int print_percent(va_list ap);
 int _printf(const char *format, ...);
-
+int print_int(va_list ap);
+void print_last_digit(int n);
 /**
  * struct convert - struct convert
  * @spec: the specifier

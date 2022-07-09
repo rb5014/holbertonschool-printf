@@ -60,3 +60,39 @@ int print_percent(va_list ap)
 	nb_c += _putchar('%');
 	return (nb_c);
 }
+
+/**
+ * print_last_digit - cfr description
+ * @n: input integer
+ * description: print the last digit of a number recursively
+ * Return: it's a void function
+ */
+
+void print_last_digit(int n)
+{
+	if (n / 10)
+		print_last_digit(n / 10);
+	 _putchar(n % 10 + '0');
+}
+
+/**
+ * print_int - cfr description
+ * @ap: input list of args
+ * description: print an integer
+ * return: a number of a integer printed
+ */
+
+int print_int(va_list ap)
+{
+	int j, nb_c = 1;
+
+	j = va_arg(ap, int);
+	print_last_digit(j);
+	while (j / 10)
+	{
+		nb_c++;
+		j = j / 10;
+	}
+	return (nb_c);
+
+}

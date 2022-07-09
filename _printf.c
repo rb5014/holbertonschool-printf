@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i, j, nb_c;
 	conv k[] = {{'c', print_char}, {'s', print_string},
-		    {'%', print_percent}, {0, 0}};
+		    {'%', print_percent}, {'d', print_int}, {'i', print_int}, {0, 0}};
 
 	if (format == NULL)
 		return (-1);

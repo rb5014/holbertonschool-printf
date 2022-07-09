@@ -68,7 +68,7 @@ int print_percent(va_list ap)
  * Return: it's a void function
  */
 
-void print_last_digit(int n)
+void print_last_digit(unsigned int n)
 {
 	if (n / 10)
 		print_last_digit(n / 10);
@@ -84,14 +84,20 @@ void print_last_digit(int n)
 
 int print_int(va_list ap)
 {
-	int j, nb_c = 1;
 
-	j = va_arg(ap, int);
-	print_last_digit(j);
-	while (j / 10)
+	int j = va_arg(ap, int), nb_c = 1;
+	unsigned int n = j;
+
+	if (j < 0)
+	{
+		nb_c += _putchar('-');
+		n = -n;
+	}
+	print_last_digit(n);
+	while (n / 10)
 	{
 		nb_c++;
-		j = j / 10;
+		n = n / 10;
 	}
 	return (nb_c);
 

@@ -13,6 +13,8 @@ int print_int(va_list ap);
 void print_last_digit(unsigned int n);
 void print_last_binary(unsigned int n);
 int print_ui_to_b(va_list ap);
+int print_unsigned_int(va_list ap);
+
 /**
  * struct convert - struct convert
  * @spec: the specifier

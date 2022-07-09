@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i, j, nb_c;
 	conv k[] = {{'c', print_char}, {'s', print_string},
 		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
-		    {'b', print_ui_to_b}, {0, 0}};
+		    {'b', print_ui_to_b}, {'u', print_unsigned_int}, {0, 0}};
 
 	if (format == NULL)
 		return (-1);

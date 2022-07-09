@@ -34,3 +34,24 @@ int print_ui_to_b(va_list ap)
 	}
 	return (nb_c);
 }
+
+/**
+ * print_unsigned_int - cfr description
+ * @ap: input va_list
+ * Description: Print an unsigned int
+ * Return: a number of unsigned int number printed
+ */
+
+int print_unsigned_int(va_list ap)
+{
+	unsigned int j = va_arg(ap, unsigned int);
+	int nb_c = 1;
+
+	print_last_digit(j);
+	while (j / 10)
+	{
+		nb_c++;
+		j = j / 10;
+	}
+	return (nb_c);
+}

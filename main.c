@@ -1,159 +1,27 @@
-#include <limits.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
  * main - Entry point
  *
- * Return: Always 0
+ * Return: 0 on success, error code otherwise
  */
 int main(void)
 {
-    int len;
-    int len2;
-    int len3;
-    int len4;
-    unsigned int ui;
-    long lint = 654, lintinf = 564;
-    short hint = 654, hintinf = -564;
-    unsigned short huinf = -564, hu = 654;
-    unsigned long luinf = -564, lu = 654;
-    void *addr;
+	int len, len2;
+	char *str = "When %s invoke GCC, it %s and linking. The %coverall options%c allow you to stop this process at an intermediate stage. %s the -c option says not to run the linker. %s preprocessor and %cthers the compiler itself. Yet other %s need to use any of them.\n\nMost of the command line options that you can use with GCC are useful for C programs; when an option is only useful with another language (usually C ++ ), the explanation says so explicitly. If the description for a particular option does not mention a source language, you can use that option with all supported languages.\n\nThe gcc program accepts options and file names as operands. Many options have multi-letter names; therefore multiple single-letter options may not%d\n";
+	char *tmp = "Then the output consists of object files output by the assembler.\n\nOther options are passed on to one stage of processing. Some options control the";
+	char *tmp2 = "options control the assembler and linker; most of these are not documented here, since you rarely";
 
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
-    printf("Length:[%d, %i]\n", len2, len2);
-    len3 = _printf("MAX MIN:[%d, %i]\n", INT_MIN, INT_MAX);
-    len4 = printf("MAX MIN:[%d, %i]\n", INT_MIN, INT_MAX);
-    _printf("Length:[%d, %i]\n", len3, len3);
-    printf("Length:[%d, %i]\n", len4, len4);
-    ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    len = _printf("Unsigned:[%u]\n", UINT_MAX);
-    len2 = printf("Unsigned:[%u]\n", UINT_MAX);
-    _printf("Unsigned octal:[%o]\n", ui);
-    printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
-	_printf("Percent:[%%]\n");
- 	printf("Percent:[%%]\n");
-    _printf("Unknown:[%r]\n");
-	_printf("%b\n", 4294967295);
-    _printf("%v\n");
-    _printf("%");
-	_printf("Octal:[%o]\n", 5648975);
-	printf("Octal:[%o]\n", 5648975);
-	_printf("%r\n", "Hello");
-    _printf("%R\n", "Bonjour, je suis michel");
-
-        _printf("\n_____Simple print_____\n");
-    len3 = _printf("Short:[%hd] [%hi]\n", hint, hint);
-    len4 = printf("Short:[%hd] [%hi]\n", hint, hint);
-    _printf("Short inf:[%hd] [%hi]\n", hintinf, hintinf);
-    printf("Short inf:[%hd] [%hi]\n", hintinf, hintinf);
-    _printf("Short MAX MIN:[%hd] [%hi]\n", SHRT_MAX, SHRT_MIN);
-    printf("Short MAX MIN:[%hd] [%hi]\n", SHRT_MAX, SHRT_MIN);
-    _printf("hu: [%d]\n", len3);
-    printf("hu: [%d]\n", len4);
-
-        len3 = _printf("long:[%ld] [%li]\n", lint, lint);
-    len4 = printf("long:[%ld] [%li]\n", lint, lint);
-    _printf("Long inf:[%ld] [%li]\n", lintinf, lintinf);
-    printf("Long inf:[%ld] [%li]\n", lintinf, lintinf);
-    _printf("Long MAX:[%ld] [%li]\n", LONG_MAX, LONG_MIN);
-    printf("Long MAX:[%ld] [%li]\n", LONG_MAX, LONG_MIN);
-    _printf("length lu: [%d]\n", len3);
-    printf("length lu: [%d]\n", len4);
-
-    _printf("\n_____UNSIGNED_____\n");
-    len3 = _printf("Short:[%hu]\n", hu);
-    len4 = printf("Short:[%hu]\n", hu);
-    _printf("Short inf:[%hu]\n", huinf);
-    printf("Short inf:[%hu]\n", huinf);
-    _printf("Short MAX:[%hu]\n", USHRT_MAX);
-    printf("Short MAX:[%hu]\n", USHRT_MAX);
-    _printf("length hu: [%d]\n", len3);
-    printf("length hu: [%d]\n", len4);
-
-    len3 = _printf("long:[%lu]\n", lu);
-    len4 = printf("long:[%lu]\n", lu);
-    _printf("Long inf:[%lu]\n", luinf);
-    printf("Long inf:[%lu]\n", luinf);
-    _printf("Long MAX:[%lu]\n", ULONG_MAX);
-    printf("Long MAX:[%lu]\n", ULONG_MAX);
-    _printf("length lu: [%d]\n", len3);
-    printf("length lu: [%d]\n", len4);
-
-        _printf("\n_____Octal_____\n");
-    len3 = _printf("Short:[%ho]\n", hu);
-    len4 = printf("Short:[%ho]\n", hu);
-    _printf("Short inf:[%ho]\n", huinf);
-    printf("Short inf:[%ho]\n", huinf);
-    _printf("Short MAX:[%ho]\n", USHRT_MAX);
-    printf("Short MAX:[%ho]\n", USHRT_MAX);
-    _printf("hu: [%d]\n", len3);
-    printf("hu: [%d]\n", len4);
-
-        len3 = _printf("long:[%lo]\n", lu);
-    len4 = printf("long:[%lo]\n", lu);
-    _printf("Long inf:[%lo]\n", luinf);
-    printf("Long inf:[%lo]\n", luinf);
-    _printf("Long MAX:[%lo]\n", ULONG_MAX);
-    printf("Long MAX:[%lo]\n", ULONG_MAX);
-    _printf("length lu: [%d]\n", len3);
-    printf("length lu: [%d]\n", len4);
-
-            _printf("\n_____Hexadecimal lower_____\n");
-    len3 = _printf("Short:[%hx]\n", hu);
-    len4 = printf("Short:[%hx]\n", hu);
-    _printf("Short inf:[%hx]\n", huinf);
-    printf("Short inf:[%hx]\n", huinf);
-    _printf("Short MAX:[%hx]\n", USHRT_MAX);
-    printf("Short MAX:[%hx]\n", USHRT_MAX);
-    _printf("hu: [%d]\n", len3);
-    printf("hu: [%d]\n", len4);
-
-        len3 = _printf("long:[%lx]\n", lu);
-    len4 = printf("long:[%lx]\n", lu);
-    _printf("Long inf:[%lx]\n", luinf);
-    printf("Long inf:[%lx]\n", luinf);
-    _printf("Long MAX:[%lx]\n", ULONG_MAX);
-    printf("Long MAX:[%lx]\n", ULONG_MAX);
-    _printf("length lu: [%d]\n", len3);
-    printf("length lu: [%d]\n", len4);
-
-        _printf("\n_____Hexadecimal upper_____\n");
-    len3 = _printf("Short:[%hX]\n", hu);
-    len4 = printf("Short:[%hX]\n", hu);
-    _printf("Short inf:[%hX]\n", huinf);
-    printf("Short inf:[%hX]\n", huinf);
-    _printf("Short MAX:[%hX]\n", USHRT_MAX);
-    printf("Short MAX:[%hX]\n", USHRT_MAX);
-    _printf("hu: [%d]\n", len3);
-    printf("hu: [%d]\n", len4);
-
-        len3 = _printf("long:[%lX]\n", lu);
-    len4 = printf("long:[%lX]\n", lu);
-    _printf("Long inf:[%lX]\n", luinf);
-    printf("Long inf:[%lX]\n", luinf);
-    _printf("Long MAX:[%lX]\n", ULONG_MAX);
-    printf("Long MAX:[%lX]\n", ULONG_MAX);
-    _printf("length lu: [%d]\n", len3);
-    printf("length lu: [%d]\n", len4);
-
-    _printf("%lv\n");
-
-    return (0);
+	len = _printf(str, "you", "normally does preprocessing, compilation, assembly", '"', '"', "For example,", tmp, 'o', tmp2, 8);
+	len2 = printf(str, "you", "normally does preprocessing, compilation, assembly", '"', '"', "For example,", tmp, 'o', tmp2, 8);
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	return (0);
 }
-
-/*4294967295*/

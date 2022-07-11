@@ -32,10 +32,10 @@ int print_string(va_list ap)
 	if (!(s))
 		return (write(1, "(null)", 6));
 
-	for (j = 0; s[j]; j++)
+	for (j = 0; s[j] != '\0'; j++)
 		buffer[j] = s[j];
 
-			return (write(1, &buffer, j - 1));
+	return (write(1, &buffer, j));
 
 }
 

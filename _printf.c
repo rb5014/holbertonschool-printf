@@ -10,8 +10,12 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i, j, nb_c;
-	conv k[] = {{'c', print_char}, {'s', print_string}, {0, 0}};
+	int i, j, nb_c = 0;
+	conv k[] = {{'c', print_char}, {'s', print_string}, {'o', print_octal},
+		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
+		    {'b', print_ui_to_b}, {'u', print_unsigned_int},
+		    {'x', print_hexa_lower}, {'X', print_hexa_upper},
+		    {0, 0}};
 
 	if (format == NULL)
 		return (-1);
@@ -24,10 +28,8 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (!(format[i + 1]))
-			return (0);
-		if (format[i + 1] == '%')
-			i++;
-		for (j = 0; j < 3; j++)   /* format[i] = '%' */
+			return (-1);
+		for (j = 0; j < 11; j++)   /* format[i] = '%' */
 		{
 			if (format[i + 1] == k[j].spec)
 			{
@@ -36,7 +38,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (j < 3)
+		if (j < 11)
 			continue;
 		nb_c += _putchar(format[i]);
 	}

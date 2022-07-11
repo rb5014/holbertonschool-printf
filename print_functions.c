@@ -10,10 +10,9 @@
 int print_char(va_list ap)
 {
 	char c = (char) va_arg(ap, int);
-	int nb_c = 0;
 
-	nb_c += _putchar(c);
-	return (nb_c);
+	return (_putchar(c));
+
 }
 
 /**
@@ -48,11 +47,8 @@ int print_string(va_list ap)
 
 int print_percent(va_list ap)
 {
-	int nb_c = 0;
-
 	(void) ap;
-	nb_c += _putchar('%');
-	return (nb_c);
+	return (_putchar('%'));
 }
 
 /**
@@ -96,4 +92,3 @@ int print_int(va_list ap)
 	return (nb_c);
 
 }
-

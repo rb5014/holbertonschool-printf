@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i, j, nb_c;
+	nb_c = 0;
 	conv k[] = {{'c', print_char}, {'s', print_string}, {'o', print_octal},
 		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
 		    {'b', print_ui_to_b}, {'u', print_unsigned_int},

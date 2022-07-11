@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * conv_hexa - conv char to hexa
  * @c: char to conv
@@ -30,7 +32,7 @@ int print_string_ascii(va_list ap)
 	if (!(s))
 		return (write(1, "(null)", 6));
 	for (j = 0; s[j]; j++)
-		if (s[j] > 0 && (s[j] < 32 || s[j] > 127))
+		if (s[j] > 0 && (s[j] < 32 || s[j] >= 127))
 		{
 			nb_c += _putchar('\\');
 			nb_c += _putchar('x');

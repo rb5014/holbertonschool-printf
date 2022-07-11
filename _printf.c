@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
 		    {'b', print_ui_to_b}, {'u', print_unsigned_int},
 		    {'x', print_hexa_lower}, {'X', print_hexa_upper},
-		    {0, 0}};
+		    {'S', print_string_ascii}, {0, 0}};
 
 	if (format == NULL)
 		return (-1);
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		}
 		if (!(format[i + 1]))
 			return (-1);
-		for (j = 0; j < 11; j++)   /* format[i] = '%' */
+		for (j = 0; j < 12; j++)   /* format[i] = '%' */
 		{
 			if (format[i + 1] == k[j].spec)
 			{
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (j < 11)
+		if (j < 12)
 			continue;
 		nb_c += _putchar(format[i]);
 	}

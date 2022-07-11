@@ -20,6 +20,8 @@ int print_hexa_upper(va_list ap);
 void print_last_hexa(unsigned int n);
 int print_octal(va_list ap);
 void print_last_octal(unsigned int n);
+void conv_hexa(char c);
+int print_string_ascii(va_list ap);
 /**
  * struct convert - struct convert
  * @spec: the specifier

@@ -25,7 +25,7 @@ int print_char(va_list ap)
 
 int print_string(va_list ap)
 {
-	int j, i;
+	int j;
 	char *s = va_arg(ap, char *);
 	char buffer[1024];
 

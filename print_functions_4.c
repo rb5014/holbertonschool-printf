@@ -6,14 +6,18 @@
  *
  * Return: nothing(void)
  */
-void conv_hexa(char c)
+int conv_hexa(char c)
 {
+	int nb_c = 0;
+
 	if (c > 0)
-		conv_hexa(c / 16);
+		nb_c += conv_hexa(c / 16);
 	if (c % 16 < 10)
-		_putchar(c % 16 + '0');
+		nb_c += _putchar(c % 16 + '0');
 	else
-		_putchar(c % 16 - 10 + 'A');
+		nb_c += _putchar(c % 16 - 10 + 'A');
+
+	return(nb_c);
 }
 
 /**
@@ -36,12 +40,7 @@ int print_string_ascii(va_list ap)
 		{
 			nb_c += _putchar('\\');
 			nb_c += _putchar('x');
-			conv_hexa(s[j]);
-			while (j / 16)
-			{
-				nb_c++;
-				j = j / 16;
-			}
+			nb_c += conv_hexa(s[j]);
 		}
 		else
 			nb_c += _putchar(s[j]);

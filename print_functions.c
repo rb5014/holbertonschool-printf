@@ -25,24 +25,18 @@ int print_char(va_list ap)
 
 int print_string(va_list ap)
 {
-	int j, nb_c = 0;
+	int j;
 	char *s = va_arg(ap, char *);
+	char buffer[1024];
 
 	if (!(s))
-	{
-		nb_c += _putchar('(');
-		nb_c += _putchar('n');
-		nb_c += _putchar('u');
-		nb_c += _putchar('l');
-		nb_c += _putchar('l');
-		nb_c += _putchar(')');
-		return (nb_c);
-	}
+		return (write(1, "(null)", 6));
+
 	for (j = 0; s[j]; j++)
-	{
-		nb_c += _putchar(s[j]);
-	}
-	return (nb_c);
+		buffer[j] = s[j];
+
+			return (write(1, &buffer, j - 1));
+
 }
 
 /**

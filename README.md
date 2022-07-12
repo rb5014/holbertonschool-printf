@@ -1,3 +1,24 @@
+# _printf functions
+
+The _printf functions recreate the original printf functions with a litle bit of custom
+
+
+## Authors
+
+- [@Cygnus-8](https://www.github.com/Cygnus-8)
+- [@rb5014](https://www.github.com/rb5014)
+
+## Features or Specifiers handled
+
+- %c
+- %s
+- %S
+- %d
+- %i
+- %x
+- %X
+- %p
+
 EDITION
         All files are edited using emacs or vim, they all end with a new
         line.

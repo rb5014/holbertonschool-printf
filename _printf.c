@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 		    {'%', print_percent}, {'d', print_int}, {'i', print_int},
 		    {'b', print_ui_to_b}, {'u', print_unsigned_int},
 		    {'x', print_hexa_lower}, {'X', print_hexa_upper},
-		    {'S', print_string_ascii}, {0, 0}};
+		    {'S', print_string_ascii}, {'p', print_pointer}, {0, 0}};
+
 
 	if (format == NULL)
 		return (-1);

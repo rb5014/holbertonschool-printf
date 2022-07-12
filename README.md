@@ -1,4 +1,4 @@
-						_PRINTF
+<						_PRINTF
 
 NAME
 	_printf
@@ -10,7 +10,8 @@ SYNOSPSIS
 
 DESCRIPTION
 	The  program  _printf produces and  writes  output  to  stdout (the sta-
-	ndard  output stream),  according  to  a  format.
+	ndard  output stream) (See write(1, &buffer, count),  according  to
+	a  format.
 	It writes the output under the control of a format string that specifies
 	how subsequent arguments (or arguments accessed via the variable-lenght
 	argument facilities of stdarg(3)) are converted for output.
@@ -76,3 +77,19 @@ RETURN VALUE
        characters printed (excluding the null byte used to end output to
        strings).
        If an output error is encountered, a negative value is returned.
+
+EDITION
+	All files are edited using emacs or vim, they all end with a new
+	line.
+	All the filles are written using the Betty style.
+	The maximum of functions per file is 5.
+
+COMPILATION
+	All the files are compiled on Ubuntu 20.04 LTS using gg, using the
+	options -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format
+	The prototypes of all the functions are included in the header file
+	called main.h
+
+
+AUTHORS
+	Romain BAYLE and Chris Monfort MURYANGO

@@ -64,6 +64,9 @@ int print_pointer(va_list ap)
 	int i = 1, nb_c = 0;
 	unsigned long int j = va_arg(ap, unsigned long int);
 
+	if (j == 0)
+		return (write(1, "(nil)", 5));
+
 	nb_c += _putchar('0');
 	nb_c += _putchar('x');
 

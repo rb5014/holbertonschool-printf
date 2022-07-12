@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		if (!(format[i + 1]))
 			return (-1);
-		for (j = 0; j < 12; j++)   /* format[i] = '%' */
+		for (j = 0; j < 13; j++)   /* format[i] = '%' */
 		{
 			if (format[i + 1] == k[j].spec)
 			{
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (j < 12)
+		if (j < 13)
 			continue;
 		nb_c += _putchar(format[i]);
 	}

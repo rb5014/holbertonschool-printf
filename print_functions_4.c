@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * conv_hexa - conv char to hexa
+ * conv_hexa_2dig - conv char to hexa
  * @c: char to conv
+ * @count: flag to check for recursion
  *
  * Return: nothing(void)
  */

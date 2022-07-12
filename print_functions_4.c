@@ -10,14 +10,14 @@ int conv_hexa(char c)
 {
 	int nb_c = 0;
 
-	if (c > 0)
+	if (c / 16)
 		nb_c += conv_hexa(c / 16);
 	if (c % 16 < 10)
 		nb_c += _putchar(c % 16 + '0');
 	else
 		nb_c += _putchar(c % 16 - 10 + 'A');
 
-	return(nb_c);
+	return (nb_c);
 }
 
 /**

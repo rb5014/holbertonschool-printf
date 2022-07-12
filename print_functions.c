@@ -24,17 +24,22 @@ int print_char(va_list ap)
 
 int print_string(va_list ap)
 {
-	int j;
+	int j, nb_c = 0;
 	char *s = va_arg(ap, char *);
 	char buffer[1024];
 
 	if (!(s))
 		return (write(1, "(null)", 6));
 
-	for (j = 0; s[j] != '\0'; j++)
-		buffer[j] = s[j];
+	for (j = 0; s[j] != '\0' && j < 1024; j++)
+			buffer[j] = s[j];
 
-	return (write(1, &buffer, j));
+	nb_c += write(1, &buffer, j);
+
+	for(; s[j] != '\0'; j++)
+		nb_c += _putchar(s[j]);
+
+	return (nb_c - 1);
 
 }
 

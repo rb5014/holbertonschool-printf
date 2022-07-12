@@ -6,20 +6,21 @@
  *
  * Return: nothing(void)
  */
-int conv_hexa(char c)
+int conv_hexa_2dig(char c, int count)
 {
 	int nb_c = 0;
 
 	if (c / 16)
-		nb_c += conv_hexa(c / 16);
+	{
+		count--;
+		nb_c += conv_hexa_2dig(c / 16, count);
+	}
+	if (count == 2)
+		nb_c += _putchar('0');
 	if (c % 16 < 10)
 		nb_c += _putchar(c % 16 + '0');
 	else
-	{
-		if (nb_c == 0)
-			nb_c += _putchar('0');
 		nb_c += _putchar(c % 16 - 10 + 'A');
-	}
 
 	return (nb_c);
 }
@@ -44,7 +45,7 @@ int print_string_ascii(va_list ap)
 		{
 			nb_c += _putchar('\\');
 			nb_c += _putchar('x');
-			nb_c += conv_hexa(s[j]);
+			nb_c += conv_hexa_2dig(s[j], 2);
 		}
 		else
 			nb_c += _putchar(s[j]);

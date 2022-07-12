@@ -32,14 +32,14 @@ int print_string(va_list ap)
 		return (write(1, "(null)", 6));
 
 	for (j = 0; s[j] != '\0' && j < 1024; j++)
-			buffer[j] = s[j];
+		buffer[j] = s[j];
 
 	nb_c += write(1, &buffer, j);
 
-	for(; s[j] != '\0'; j++)
+	for (; s[j] != '\0'; j++)
 		nb_c += _putchar(s[j]);
 
-	return (nb_c - 1);
+	return (nb_c);
 
 }
 

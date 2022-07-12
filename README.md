@@ -73,10 +73,24 @@ Conversion specifiers
        p      The void * pointer argument is printed in hexadecimal.
 
 RETURN VALUE
-       Upon successful return, these functions return the number of
-       characters printed (excluding the null byte used to end output to
-       strings).
-       If an output error is encountered, a negative value is returned.
+	Upon successful return, these functions return the number of
+       	characters printed (excluding the null byte used to end output to
+       	strings).
+       	If an output error is encountered, a negative value is returned.
+
+EXAMPLES
+	To print the string "Hello World" without any specifier and arguments:
+		#include "main.h"
+		_printf("Hello World");
+
+	To print "Hello\x0AWorld"(0A is the hexadecimal value of 10, which is
+	the ASCII value of '\n':
+	    	#include "main.h"
+		_printf("Hello%SWorld", "\n");
+
+	To print an unsigned integer number in binary, followed by a new line:
+	   	#include "main.H"
+		_printf("UInt/Binary of number: %b\n", number);
 
 EDITION
 	All files are edited using emacs or vim, they all end with a new
@@ -92,4 +106,4 @@ COMPILATION
 
 
 AUTHORS
-	Romain BAYLE and Chris Monfort MURYANGO
+	Romain BAYLE and Chris Monfort MURYANGO.

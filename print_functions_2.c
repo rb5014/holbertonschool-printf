@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * print_last_binary - cfr description
  * @n: input unsigned int
@@ -64,7 +65,7 @@ int print_unsigned_int(va_list ap)
  * Return: it's void function
  */
 
-void print_last_hexa_digit(unsigned int n)
+void print_last_hexa_digit(unsigned long int n)
 {
 	int j;
 
@@ -86,7 +87,7 @@ void print_last_hexa_digit(unsigned int n)
 
 int print_hexa_lower(va_list ap)
 {
-	unsigned int j = va_arg(ap, unsigned int);
+	unsigned long int j = va_arg(ap, unsigned long int);
 	int nb_c = 1;
 
 	print_last_hexa_digit(j);

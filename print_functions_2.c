@@ -67,7 +67,7 @@ int print_unsigned_int(va_list ap)
 
 void print_last_hexa_digit(unsigned long int n)
 {
-	unsigned int j;
+	unsigned long int j;
 
 	if (n / 16)
 		print_last_hexa_digit(n / 16);
